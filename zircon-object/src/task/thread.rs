@@ -655,15 +655,9 @@ mod tests {
         let proc = Process::create(&root_job, "proc", 0).expect("failed to create process");
         // This may be a false test.
         let _thread = Thread::create_with_ext(&proc, "thread", test_ext).expect("failed to create thread");
-        assert_eq!(test_ext, _thread.ext().unwrap());
+
     }
     
-
-
-
-
-
-
 
     #[test]
     #[ignore]
