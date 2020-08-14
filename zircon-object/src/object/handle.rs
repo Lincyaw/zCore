@@ -1,3 +1,4 @@
+#![deny(missing_docs)]
 use {super::*, alloc::sync::Arc};
 
 /// The value refers to a Handle in user space.
@@ -113,7 +114,7 @@ mod tests {
 
     #[test]
     #[should_panic(expected = "unknown type")]
-    fn test_ojb_type_unknown() {
+    fn test_obj_type_unknown() {
         let obj: Arc<dyn KernelObject> = DummyObject::new();
         assert_eq!(1, obj_type(&obj));
     }

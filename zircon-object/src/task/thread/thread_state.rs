@@ -16,8 +16,11 @@ numeric_enum! {
     }
 }
 
+/// Common interface of a UserContext.
 pub trait ContextExt {
+    /// Read the thread's state.
     fn read_state(&self, kind: ThreadStateKind, buf: &mut [u8]) -> ZxResult<usize>;
+    /// Write the thread's state.
     fn write_state(&mut self, kind: ThreadStateKind, buf: &[u8]) -> ZxResult;
 }
 
